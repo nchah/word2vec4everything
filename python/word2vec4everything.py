@@ -147,12 +147,11 @@ class Word2Vec(object):
 
     def read_analogies(self):
         """Reads through the analogy question file.
-
-    Returns:
-      questions: a [n, 4] numpy array containing the analogy question's
+        Returns:
+        questions: a [n, 4] numpy array containing the analogy question's
                  word ids.
-      questions_skipped: questions skipped due to unknown words.
-    """
+        questions_skipped: questions skipped due to unknown words.
+        """
         questions = []
         questions_skipped = 0
         with open(self._options.eval_data, "rb") as analogy_f:
@@ -398,6 +397,9 @@ class Word2Vec(object):
             print("\n%s\n=====================================" % (words[i]))
             for (neighbor, distance) in zip(idx[i, :num], vals[i, :num]):
                 print("%-20s %6.4f" % (self._id2word[neighbor], distance))
+
+    def graph_tsne():
+        """Graph the embeddings with dimensionality reduction."""
 
 
 def _start_shell(local_ns=None):
