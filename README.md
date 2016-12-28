@@ -21,6 +21,13 @@ This project implements word2vec using Google's TensorFlow library.
 ## Gallery
 
 **All 7 Harry Potter books**
-
-word2vec clusters the 4 houses of Hogwarts together.
+- Data: ~10 MB - A plaintext file of all 7 Harry Potter books. Found with the help of some Google-fu.
+- Comment: word2vec clusters the 4 houses of Hogwarts (Gryffindor, Hufflepuff, Ravenclaw, and Slytherin) together.
 ![](images/tsne-hp-names-200k-steps-1500-plot-v2-houses-cluster.png)
+
+
+
+
+
+
+
