@@ -3,7 +3,7 @@
 # word2vec4everything.py 
 # A modified version of the starter code provided in the TensorFlow tutorial.
 #
-# Run: $ word2vec4everything.py [/path/to/file]
+# Run: $ python word2vec4everything.py [/path/to/file]
 # ==============================================================================
 
 # Copyright 2015 The TensorFlow Authors. All Rights Reserved.
@@ -44,6 +44,7 @@ import string
 parser = argparse.ArgumentParser()
 parser.add_argument('--input_data', help='Path to the input data file')
 # parser.add_argument('--', help='')
+parser.add_argument('--train_steps', type=int, default=20000, help='')
 args = parser.parse_args()
 
 
@@ -187,7 +188,8 @@ with graph.as_default():
     init = tf.initialize_all_variables()
 
 # Step 5: Begin training.
-num_steps = 200001  # 100001
+# num_steps = 200001  # 100001
+num_steps = args.train_steps
 
 with tf.Session(graph=graph) as session:
     # We must initialize all variables before we use them.
@@ -235,13 +237,19 @@ def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
     texts = []
     for i, label in enumerate(labels):
         pos = nltk.pos_tag([label])
-        ignore_tags = ['DT', 'PRP', 'VB', 'RB', 'IN', 'JJ']
-        #if label.lower() not in stopwords and pos[0][1] not in ignore_tags and pos[0][1] == 'NN':
-        if label.lower() not in stopwords and label[0].isupper() and "'" not in label:
+        # List POS tags with >>> nltk.help.upenn_tagset()
+        ignore_tags = ['CC', 'CD', 'DT', 'EX', 'FW', 'IN', 'LS', 'MD', 'PDT', 'PRP', 'PRP$',
+        'RB', 'RBR', 'RBS', 'RP', 'SYM', 'TO', 'UH', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ', 
+        'WDT', 'WP', 'WP$', 'WRB']
+        # Logic for selecting the labels to visualize
+        if label.lower() not in stopwords \
+            and label[0].isupper() \
+            and pos[0][1] not in ignore_tags \
+            and "'" not in label:
             x, y = low_dim_embs[i, :]
             texts.append(plt.text(x, y, label))
             plt.scatter(x, y)
-    adjust_text(texts, arrowprops=dict(arrowstyle='-', color='k', lw=0.5))
+    adjust_text(texts, arrowprops=dict(arrowstyle='-', color='k', lw=0.5))  # For label placements
             # plt.annotate(label,
                          # xy=(x, y),
                          # xytext=(5, 2),
@@ -249,7 +257,7 @@ def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
                          # ha='right',
                          # va='bottom')
     plt.savefig(filename, dpi=600)
-    subprocess.call(["say 'program completed'"], shell=True)  # notification for OS X
+    subprocess.call(["say 'program completed'"], shell=True)  # Audio notification for OS X
 
 
 try:
@@ -263,7 +271,7 @@ try:
     stopwords = nltk.corpus.stopwords.words('english')
 
     tsne = TSNE(perplexity=30, n_components=2, init='pca', n_iter=5000)
-    plot_only = 1500  # 500
+    plot_only = 1000  # 500
     low_dim_embs = tsne.fit_transform(final_embeddings[:plot_only, :])
 
     labels = [reverse_dictionary[i] for i in xrange(plot_only)]

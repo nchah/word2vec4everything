@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+# word2vec4everything.py 
+# A modified version of the starter code provided in the TensorFlow tutorial.
+#
+# Run: $ python word2vec4everything.py [/path/to/file]
+# ==============================================================================
+
 # Copyright 2015 The TensorFlow Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
