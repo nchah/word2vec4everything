@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 # word2vec4everything.py 
 # A modified version of the starter code provided in the TensorFlow tutorial.
@@ -69,7 +70,7 @@ words = tf.compat.as_str(data).split()
 print('Data size:', len(words))
 
 # Step 2: Build the dictionary and replace rare words with UNK token.
-vocabulary_size = 10000  # 50000
+vocabulary_size = 5000  # 50000
 
 def build_dataset(words):
     count = [['UNK', -1]]
@@ -245,7 +246,7 @@ def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
         if label.lower() not in stopwords \
             and label[0].isupper() \
             and pos[0][1] not in ignore_tags \
-            and "'" not in label:
+            and "'" not in label and u"’" not in label:
             x, y = low_dim_embs[i, :]
             texts.append(plt.text(x, y, label))
             plt.scatter(x, y)
@@ -271,14 +272,13 @@ try:
     stopwords = nltk.corpus.stopwords.words('english')
 
     tsne = TSNE(perplexity=30, n_components=2, init='pca', n_iter=5000)
-    plot_only = 1000  # 500
+    plot_only = 1500  # 500
     low_dim_embs = tsne.fit_transform(final_embeddings[:plot_only, :])
 
     labels = [reverse_dictionary[i] for i in xrange(plot_only)]
     labels = [unicode(word, 'utf-8') for word in labels]
     print(str(labels))
-
-    print(len(low_dim_embs), len(labels))
+    # print(len(low_dim_embs), len(labels))
 
     plot_with_labels(low_dim_embs, labels)
 
