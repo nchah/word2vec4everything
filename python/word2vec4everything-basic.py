@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+
+# word2vec4everything.py 
+# A modified version of the starter code provided in the TensorFlow tutorial.
+#
+# Run: $ word2vec4everything.py [/path/to/file]
+# ==============================================================================
+
 # Copyright 2015 The TensorFlow Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,6 +25,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import argparse
 import codecs
 import collections
 import math
@@ -25,31 +34,41 @@ import random
 import zipfile
 
 import numpy as np
-from six.moves import urllib
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 import nltk
 import string
 
+
+# Setting up the arguments
+parser = argparse.ArgumentParser()
+parser.add_argument('--input_data', help='Path to the input data file')
+# parser.add_argument('--', help='')
+args = parser.parse_args()
+
+
+# Step 1: Load the data.
+def read_data(input_data):
+    """Load the dataset"""
+    with codecs.open(input_data, encoding='utf8') as f:
+        data = f.read()
+    return data
+
+data = read_data(args.input_data)
+
+# Stopwords and Punctuation
 stopwords = nltk.corpus.stopwords.words('english')
 punctuation = set(string.punctuation)
-
-# Step 1: Download/load the data.
-with codecs.open('harry-potter-all.txt', encoding='utf8') as f:
-    data = f.read()
-
 punctuation.remove("'")
 for p in punctuation:
     data = data.replace(p, '')
     print('replaced: ' + p)
 
 words = tf.compat.as_str(data).split()
-
-print('Data size', len(words))
+print('Data size:', len(words))
 
 # Step 2: Build the dictionary and replace rare words with UNK token.
 vocabulary_size = 10000  # 50000
-
 
 def build_dataset(words):
     count = [['UNK', -1]]
