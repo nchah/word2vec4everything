@@ -41,11 +41,13 @@ import nltk
 import string
 
 
-# Setting up the arguments
+# Setting up the program's arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('--input_data', help='Path to the input data file')
 # parser.add_argument('--', help='')
-parser.add_argument('--train_steps', type=int, default=20000, help='')
+parser.add_argument('--train_steps', type=int, 
+                    default=20000, help='Number of training steps.')
+parser.add_argument('--', help='')
 args = parser.parse_args()
 
 
@@ -131,8 +133,8 @@ for i in range(8):
     print(batch[i], reverse_dictionary[batch[i]],
           '->', labels[i, 0], reverse_dictionary[labels[i, 0]])
 
-# Step 4: Build and train a skip-gram model.
 
+# Step 4: Build and train a skip-gram model.
 batch_size = 128
 embedding_size = 128  # Dimension of the embedding vector.
 skip_window = 1  # How many words to consider left and right.
@@ -187,6 +189,7 @@ with graph.as_default():
 
     # Add variable initializer.
     init = tf.initialize_all_variables()
+
 
 # Step 5: Begin training.
 # num_steps = 200001  # 100001
