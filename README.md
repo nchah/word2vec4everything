@@ -17,6 +17,13 @@ This project implements word2vec using Google's TensorFlow library.
 - Python 2.x
 - TensorFlow
 
+The TensorFlow scripts in the `python` directory are modifications to the starter code provided in the TensorFlow tutorials.
+Modifications include:
+
+- Python PEP8 styling changes
+- General refactoring 
+- Further code to adjust the visualization step
+
 
 ## Gallery
 
