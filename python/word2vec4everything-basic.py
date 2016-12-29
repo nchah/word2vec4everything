@@ -73,7 +73,7 @@ print('Data size:', len(words))
 
 
 # Step 2: Build the dictionary and replace rare words with UNK token.
-vocabulary_size = 10000  # 50000
+vocabulary_size = 5000  # 50000
 
 def build_dataset(words):
     count = [['UNK', -1]]
