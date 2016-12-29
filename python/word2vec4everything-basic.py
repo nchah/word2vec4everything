@@ -47,7 +47,7 @@ parser.add_argument('--input_data', help='Path to the input data file')
 # parser.add_argument('--', help='')
 parser.add_argument('--train_steps', type=int, 
                     default=20000, help='Number of training steps.')
-parser.add_argument('--', help='')
+# parser.add_argument('--', help='')
 args = parser.parse_args()
 
 
@@ -71,8 +71,9 @@ for p in punctuation:
 words = tf.compat.as_str(data).split()
 print('Data size:', len(words))
 
+
 # Step 2: Build the dictionary and replace rare words with UNK token.
-vocabulary_size = 5000  # 50000
+vocabulary_size = 10000  # 50000
 
 def build_dataset(words):
     count = [['UNK', -1]]
