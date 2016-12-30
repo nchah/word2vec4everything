@@ -47,6 +47,10 @@ parser.add_argument('--input_data', help='Path to the input data file')
 # parser.add_argument('--', help='')
 parser.add_argument('--train_steps', type=int, 
                     default=20000, help='Number of training steps.')
+parser.add_argument('--vocab_size', type=int, 
+                    default=5000, help='Number of words in the dictionary.')
+parser.add_argument('--plot_count', type=int, 
+                    default=1500, help='Number of points to consider in visual.')
 # parser.add_argument('--', help='')
 args = parser.parse_args()
 
@@ -60,7 +64,7 @@ def read_data(input_data):
 
 data = read_data(args.input_data)
 
-# Stopwords and Punctuation
+# Pre-procssing: Stopwords and Punctuation
 stopwords = nltk.corpus.stopwords.words('english')
 punctuation = set(string.punctuation)
 punctuation.remove("'")
@@ -73,7 +77,7 @@ print('Data size:', len(words))
 
 
 # Step 2: Build the dictionary and replace rare words with UNK token.
-vocabulary_size = 5000  # 50000
+vocabulary_size = args.vocab_size
 
 def build_dataset(words):
     count = [['UNK', -1]]
@@ -193,7 +197,6 @@ with graph.as_default():
 
 
 # Step 5: Begin training.
-# num_steps = 200001  # 100001
 num_steps = args.train_steps
 
 with tf.Session(graph=graph) as session:
@@ -262,29 +265,25 @@ def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
                          # ha='right',
                          # va='bottom')
     plt.savefig(filename, dpi=600)
-    subprocess.call(["say 'program completed'"], shell=True)  # Audio notification for OS X
+    subprocess.call(["say 'program completed'"], shell=True)  # Audio notification for OS X =)
 
 
-try:
-    from sklearn.manifold import TSNE
-    import matplotlib.pyplot as plt
-    import nltk
-    from nltk import pos_tag
-    from adjustText import adjust_text
-    import subprocess
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+import nltk
+from nltk import pos_tag
+from adjustText import adjust_text
+import subprocess
 
-    stopwords = nltk.corpus.stopwords.words('english')
+stopwords = nltk.corpus.stopwords.words('english')
 
-    tsne = TSNE(perplexity=30, n_components=2, init='pca', n_iter=5000)
-    plot_only = 1500  # 500
-    low_dim_embs = tsne.fit_transform(final_embeddings[:plot_only, :])
+tsne = TSNE(perplexity=30, n_components=2, init='pca', n_iter=5000)
+plot_only = args.plot_count
+low_dim_embs = tsne.fit_transform(final_embeddings[:plot_only, :])
 
-    labels = [reverse_dictionary[i] for i in xrange(plot_only)]
-    labels = [unicode(word, 'utf-8') for word in labels]
-    print(str(labels))
-    # print(len(low_dim_embs), len(labels))
+labels = [reverse_dictionary[i] for i in xrange(plot_only)]
+labels = [unicode(word, 'utf-8') for word in labels]
+print(str(labels))
+# print(len(low_dim_embs), len(labels))
 
-    plot_with_labels(low_dim_embs, labels)
-
-except ImportError:
-    print("Please install sklearn, matplotlib, and scipy to visualize embeddings.")
+plot_with_labels(low_dim_embs, labels)
