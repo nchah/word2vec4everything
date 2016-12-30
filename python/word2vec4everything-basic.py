@@ -257,9 +257,13 @@ def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
         if label.lower() not in stopwords \
             and label[0].isupper() \
             and pos[0][1] not in ignore_tags \
-            and "'" not in label and u"’" not in label:
+            and "'" not in label and u"’" not in label \
+            or label in whitelist_labels:
             x, y = low_dim_embs[i, :]
-            texts.append(plt.text(x, y, label))
+            if label in whitelist_labels:
+                texts.append(plt.text(x, y, label, color="red"))
+            else:
+                texts.append(plt.text(x, y, label))
             plt.scatter(x, y)
     adjust_text(texts, arrowprops=dict(arrowstyle='-', color='k', lw=0.5))  # For label placements
             # plt.annotate(label,

@@ -33,6 +33,11 @@ Modifications include:
 ![](images/tsne-hp-names-200k-steps-1500-plot-v2-houses-cluster.png)
 
 
+**The Fellowship of the Ring**
+- Data: ~1 MB - A plaintext file of the first book in The Lord of the Rings book series.
+- Comment: word2vec clusters the members of the Fellowship of the Ring: Frodo, Sam, Gandalf, Legolas, Gimli, Aragorn, Boromir, Merry, and Pippin. It's also neat that 'Strider' is quite close to Aragorn. Sauron, Saruman, and Gollum are also relatively distant from the Fellowship.
+
+![](images/tsne-lotr1-200k-steps-500-plot.png)
 
 
 
