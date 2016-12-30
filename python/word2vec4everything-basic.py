@@ -51,6 +51,8 @@ parser.add_argument('--vocab_size', type=int,
                     default=5000, help='Number of words in the dictionary.')
 parser.add_argument('--plot_count', type=int, 
                     default=1500, help='Number of points to consider in visual.')
+parser.add_argument('--whitelist_labels', type=str,  # Convert to list downstream 
+                    help='')
 # parser.add_argument('--', help='')
 args = parser.parse_args()
 
@@ -243,6 +245,8 @@ def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
     assert low_dim_embs.shape[0] >= len(labels), "More labels than embeddings"
     plt.figure(figsize=(12, 12))  # in inches
     texts = []
+    # Explicitly set the labels to graph from the source text
+    whitelist_labels = args.whitelist_labels.split(',')
     for i, label in enumerate(labels):
         pos = nltk.pos_tag([label])
         # List POS tags with >>> nltk.help.upenn_tagset()
