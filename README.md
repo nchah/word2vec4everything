@@ -30,12 +30,14 @@ Modifications include:
 **All 7 Harry Potter books**
 - Data: ~10 MB - A plaintext file of all 7 Harry Potter books. Found with the help of some Google-fu.
 - Comment: word2vec clusters the 4 houses of Hogwarts (Gryffindor, Hufflepuff, Ravenclaw, and Slytherin) together.
+
 ![](images/tsne-hp-names-200k-steps-1500-plot-v2-houses-cluster.png)
 
 
 **The Fellowship of the Ring**
 - Data: ~1 MB - A plaintext file of the first book in The Lord of the Rings book series.
 - Comment: word2vec clusters the members of the Fellowship of the Ring: Frodo, Sam, Gandalf, Legolas, Gimli, Aragorn, Boromir, Merry, and Pippin. It's also neat that 'Strider' is quite close to Aragorn. Sauron, Saruman, and Gollum are also relatively distant from the Fellowship.
+- Command line: ```$ python python/word2vec4everything-basic.py --input_data=data/lotr-all.txt  --train_steps=200000 --plot_count=500  --whitelist_labels=Frodo,Sam,Gandalf,Legolas,Gimli,Aragorn,Boromir,Merry,Pippin,Gollum,Sauron,Saruman,Balrog,Galadriel  ```
 
 ![](images/tsne-lotr1-200k-steps-500-plot-1.png)
 
