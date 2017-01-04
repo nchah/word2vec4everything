@@ -43,9 +43,12 @@ Modifications include:
 
 ![](images/tsne-lotr1-200k-steps-500-plot-1.png)
 
+**The Bible**
+- Data: ~4.4 MB - A plaintext file of the Bible, King James version.
+- Comment: There seems to be a distinct cluster for the "God" related words and a separate cluster for the prominent people in the source text. Running the script again seems to replicate this interesting finding.
+- Command line: ```python python/word2vec4everything-basic.py --input_data=data/bible-kjv.txt  --train_steps=200000 --plot_count=750 --whitelist_labels=Jesus,Mary,Simon,Peter,Andrew,James,John,Philip,Bartholomew,Thomas,Matthew,Thaddaeus,Judas ```
 
-
-
+![](images/tsne-bible-kjv-200k-steps-750-plot-1.png)
 
 
 
