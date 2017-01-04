@@ -44,15 +44,14 @@ import string
 # Setting up the program's arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('--input_data', help='Path to the input data file')
-# parser.add_argument('--', help='')
 parser.add_argument('--train_steps', type=int, 
                     default=20000, help='Number of training steps.')
 parser.add_argument('--vocab_size', type=int, 
                     default=5000, help='Number of words in the dictionary.')
 parser.add_argument('--plot_count', type=int, 
-                    default=1500, help='Number of points to consider in visualization.')
+                    default=1500, help='Number of points in visualization.')
 parser.add_argument('--whitelist_labels', type=str,  # Convert to list downstream 
-                    help='')
+                    help='A list of labels to include in the visual.')
 # parser.add_argument('--', help='')
 args = parser.parse_args()
 
