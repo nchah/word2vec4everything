@@ -68,7 +68,7 @@ This project is somewhat limited by the public availability of texts on the Inte
 - Comment: Aslan, an important character in the series, seems to be an outlier from the cluster of other main characters. However, replicating this in other iterations doesn't quite support this as strongly.
 - Command line: ```$ python python/word2vec4everything-basic.py --input_data=data/chronicles-of-narnia.txt  --train_steps=200000  --plot_count=500 --whitelist_labels=Aslan,Peter,Susan,Edmund,Lucy,Eustace,Jill,Digory,Polly,Prince,Caspian,Reepicheep,Jadis,Shasta,Aravis,Bree,Tumnus,Trumpkin,Puddlegum,Tirian```
  
-![](images/tsne-narnia-200k-steps-500-plot-1)
+![](images/tsne-narnia-200k-steps-500-plot-1.png)
 
 
 
