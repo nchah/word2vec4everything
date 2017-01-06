@@ -8,7 +8,7 @@ Processing some interesting text documents through the word2vec machine learning
 
 As explained on [Wikipedia](https://en.wikipedia.org/wiki/Word2vec), `word2vec` refers to a number of machine learning models that take a corpus of text and output a vector space of word embeddings.
 The word2vec model was created at Google by a team of Tomas Mikolov et al. in 2013 and has since been adapted in numerous papers. 
-The resulting word vectors can be visualized in such a way that words with similiar semantic meanings and contexts are clustered together. 
+The resulting word vectors can be visualized in such a way that words with similar semantic meanings and contexts are clustered together. 
 As an unsupervised machine learning technique, the input text that is fed into the word2vec model doesn't require any labels.
 This makes it all the more interesting when the final vector visualizations show that semantically related words are clustered together.
 
