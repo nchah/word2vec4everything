@@ -4,7 +4,7 @@
 
 Processing some interesting text documents through the word2vec machine learning model and visualizing the resulting vectors to discover the relationships and clusters that come up.
 
-## Introduction to word2vec
+## Brief Introduction to word2vec
 
 As explained on [Wikipedia](https://en.wikipedia.org/wiki/Word2vec), `word2vec` refers to a number of machine learning models that take a corpus of text and output a vector space of word embeddings.
 The word2vec model was created at Google by a team of Tomas Mikolov et al. in 2013 and has since been adapted in numerous papers. 
@@ -73,7 +73,7 @@ This project is somewhat limited by the public availability of texts on the Inte
 **Ender's Game**
 
 - Data: ~500 KB - A plaintext file of Ender's Game
-- Comment: As expected, Ender and his team are clustered together. Locke and Demosthenes maintain some distance. It would be interesting if further training reveals distinct clusters between the Battle School trainees and the brass.
+- Comment: As expected, Ender and his team are clustered together. Locke and Demosthenes maintain some distance. It would be interesting if further training reveals distinct clusters between the Battle School trainees and the school's top military brass.
 - Command line: `$ python python/word2vec4everything-basic.py --input_data=data/enders-game.txt  --train_steps=200000  --plot_count=750 --whitelist_labels=Ender,Valentine,Peter,Colonel,Graff,Mazer,Rackham,Major,Anderson,Bean,Alai,Dink,Petra,Bonzo,Bernard,Stilson`
 
 ![](images/tsne-enders-game-200k-steps-750-plot-1.png)
