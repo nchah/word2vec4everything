@@ -16,9 +16,8 @@ The [t-distributed Stochastic Neighbor Embedding](https://en.wikipedia.org/wiki/
 
 ## Dependencies
 
-This project implements word2vec using Google's TensorFlow library.
-- Python 2.x
-- TensorFlow
+This project implements word2vec (Skip-gram model) using Google's TensorFlow library in Python 2.x. 
+Plenty of other libraries are also used: matplotlib, nltk, and sklearn, among others.
 
 The TensorFlow scripts in the `python` directory are modifications to the starter code provided in the TensorFlow tutorials: [Vector Representations of Words](https://www.tensorflow.org/tutorials/word2vec/).
 Modifications include:
@@ -50,7 +49,6 @@ This project is somewhat limited by the public availability of texts on the Inte
 - Comment: word2vec clusters the members of the Fellowship of the Ring: Frodo, Sam, Gandalf, Legolas, Gimli, Aragorn, Boromir, Merry, and Pippin. It's also neat that 'Strider' is quite close to Aragorn. Sauron, Saruman, and Gollum are also relatively distant from the Fellowship.
 - Command line: `$ python python/word2vec4everything-basic.py --input_data=data/lotr-all.txt  --train_steps=200000 --plot_count=500  --whitelist_labels=Frodo,Sam,Gandalf,Legolas,Gimli,Aragorn,Boromir,Merry,Pippin,Gollum,Sauron,Saruman,Balrog,Galadriel`
 
-
 ![](images/tsne-lotr1-200k-steps-500-plot-1.png)
 
 
@@ -59,7 +57,6 @@ This project is somewhat limited by the public availability of texts on the Inte
 - Data: ~4.4 MB - A plaintext file of the Bible, King James version.
 - Comment: There seems to be a distinct cluster for the "God" related words and a separate cluster for the prominent people in the source text. Running the script again seems to replicate this interesting finding.
 - Command line: `$ python python/word2vec4everything-basic.py --input_data=data/bible-kjv.txt  --train_steps=200000 --plot_count=750 --whitelist_labels=Jesus,Mary,Simon,Peter,Andrew,James,John,Philip,Bartholomew,Thomas,Matthew,Thaddaeus,Judas`
-
 
 ![](images/tsne-bible-kjv-200k-steps-750-plot-1.png)
 
@@ -73,6 +70,12 @@ This project is somewhat limited by the public availability of texts on the Inte
 ![](images/tsne-narnia-200k-steps-500-plot-1.png)
 
 
+**Ender's Game**
 
+- Data: ~500 KB - A plaintext file of Ender's Game
+- Comment: As expected, Ender and his team are clustered together. Locke and Demosthenes maintain some distance. It would be interesting if further training reveals distinct clusters between the Battle School trainees and the brass.
+- Command line: `$ python python/word2vec4everything-basic.py --input_data=data/enders-game.txt  --train_steps=200000  --plot_count=750 --whitelist_labels=Ender,Valentine,Peter,Colonel,Graff,Mazer,Rackham,Major,Anderson,Bean,Alai,Dink,Petra,Bonzo,Bernard,Stilson`
+
+![](images/tsne-enders-game-200k-steps-750-plot-1.ong)
 
 
