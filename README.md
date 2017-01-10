@@ -76,6 +76,6 @@ This project is somewhat limited by the public availability of texts on the Inte
 - Comment: As expected, Ender and his team are clustered together. Locke and Demosthenes maintain some distance. It would be interesting if further training reveals distinct clusters between the Battle School trainees and the brass.
 - Command line: `$ python python/word2vec4everything-basic.py --input_data=data/enders-game.txt  --train_steps=200000  --plot_count=750 --whitelist_labels=Ender,Valentine,Peter,Colonel,Graff,Mazer,Rackham,Major,Anderson,Bean,Alai,Dink,Petra,Bonzo,Bernard,Stilson`
 
-![](images/tsne-enders-game-200k-steps-750-plot-1.ong)
+![](images/tsne-enders-game-200k-steps-750-plot-1.png)
 
 
