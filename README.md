@@ -96,9 +96,14 @@ The TensorFlow tutorial:
 
 Other resources that explain or extend word2vec:
 
+- word2vec. Wikipedia article. https://en.wikipedia.org/wiki/Word2vec
 - Levy, O., & Goldberg, Y. (2014). Neural word embedding as implicit matrix factorization. In Advances in neural information processing systems (pp. 2177-2185). Retrieved from http://papers.nips.cc/paper/5477-scalable-non-linear-learning-with-adaptive-polynomial-expansions.pdf
 - Rong, X. (2014). word2vec parameter learning explained. arXiv preprint arXiv:1411.2738. Retrieved from https://arxiv.org/abs/1411.2738
 
+Some resources that cover the t-SNE dimensionality reduction technique used for the visualization step:
+
+- t-distributed stochastic neighbor embedding. Wikipedia article. https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding
+- Maaten, L. V. D., & Hinton, G. (2008). Visualizing data using t-SNE. Journal of Machine Learning Research, 9(Nov), 2579-2605. Retrieved from http://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf
 
 
 
