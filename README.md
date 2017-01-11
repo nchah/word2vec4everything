@@ -88,11 +88,16 @@ The original papers by Mikolov et al.:
 
 - Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013). Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781. Retrieved from https://arxiv.org/abs/1301.3781 
 - Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., and Dean, J. (2013). Distributed representations of words and phrases and their compositionality. In Advances in Neural Information Processing Systems, pages 3111–3119. Retrieved from http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf
+- Mikolov, T., Yih, W. T., & Zweig, G. (2013, June). Linguistic Regularities in Continuous Space Word Representations. In HLT-NAACL (Vol. 13, pp. 746-751). Retrieved from http://www.aclweb.org/anthology/N13-1#page=784
 
 The TensorFlow tutorial:
 
 - Vector Representations of Words. https://www.tensorflow.org/tutorials/word2vec/ 
 
+Other resources that explain or extend word2vec:
+
+- Levy, O., & Goldberg, Y. (2014). Neural word embedding as implicit matrix factorization. In Advances in neural information processing systems (pp. 2177-2185). Retrieved from http://papers.nips.cc/paper/5477-scalable-non-linear-learning-with-adaptive-polynomial-expansions.pdf
+- Rong, X. (2014). word2vec parameter learning explained. arXiv preprint arXiv:1411.2738. Retrieved from https://arxiv.org/abs/1411.2738
 
 
 
