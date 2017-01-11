@@ -82,4 +82,18 @@ This project is somewhat limited by the public availability of texts on the Inte
 
 ## References
 
+More information on word2vec as follows. Some of the papers are referenced according to the APA style.
+
+The original papers by Mikolov et al.: 
+
+- Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013). Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781. Retrieved from https://arxiv.org/abs/1301.3781 
+- Mikolov, T., Sutskever, I., Chen, K., Corrado, G. S., and Dean, J. (2013). Distributed representations of words and phrases and their compositionality. In Advances in Neural Information Processing Systems, pages 3111–3119. Retrieved from http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf
+
+The TensorFlow tutorial:
+
+- Vector Representations of Words. https://www.tensorflow.org/tutorials/word2vec/ 
+
+
+
+
 
