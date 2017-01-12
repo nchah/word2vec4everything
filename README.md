@@ -19,6 +19,23 @@ The [t-distributed Stochastic Neighbor Embedding](https://en.wikipedia.org/wiki/
 This project implements word2vec (Skip-gram model) using Google's TensorFlow library in Python 2.x. 
 Plenty of other libraries are also used: matplotlib, nltk, and sklearn, among others.
 
+Installing TensorFlow locally using the Anaconda, Python 2.7 instructions ([TensorFlow link](https://www.tensorflow.org/get_started/os_setup)).
+```
+# Creating the environment through a conda command
+$ conda create -n tensorflow python=2.7
+
+# Activate the environment. This causes the terminal prompt to change.
+$ source activate tensorflow
+(tensorflow)$ # The new prompt for the conda environment
+
+# Installing TensorFlow.
+$ conda install -c conda-forge tensorflow
+
+# Deactivate the environment to return to the usual prompt.
+(tensorflow)$ source deactivate
+$ # Back to normal
+```
+
 The TensorFlow scripts in the `python` directory are modifications to the starter code provided in the TensorFlow tutorials: [Vector Representations of Words](https://www.tensorflow.org/tutorials/word2vec/).
 Modifications include:
 - Python PEP8 styling changes
@@ -100,6 +117,7 @@ Other resources that explain or extend word2vec:
 - Levy, O., & Goldberg, Y. (2014). Neural word embedding as implicit matrix factorization. In Advances in neural information processing systems (pp. 2177-2185). Retrieved from http://papers.nips.cc/paper/5477-scalable-non-linear-learning-with-adaptive-polynomial-expansions.pdf
 - Rong, X. (2014). word2vec parameter learning explained. arXiv preprint arXiv:1411.2738. Retrieved from https://arxiv.org/abs/1411.2738
 - Colyer, A. (April 2016). The amazing power of word vectors. Retrieved from https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/
+- McCormick, C. (April 2016). Word2Vec Tutorial - The Skip-Gram Model. Retrieved from http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/
 
 Some resources that cover the t-SNE dimensionality reduction technique used for the visualization step:
 
