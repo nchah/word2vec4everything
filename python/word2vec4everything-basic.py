@@ -52,6 +52,8 @@ parser.add_argument('--plot_count', type=int,
                     default=1500, help='Number of points in visualization.')
 parser.add_argument('--whitelist_labels', type=str,  # Convert to list downstream 
                     help='A list of labels to include in the visual.')
+parser.add_argument('--skip_window', type=int,
+                    default=1, help='Number of words to consider in the window')
 # parser.add_argument('--', help='')
 args = parser.parse_args()
 
@@ -143,7 +145,7 @@ for i in range(8):
 # Step 4: Build and train a skip-gram model.
 batch_size = 128
 embedding_size = 128  # Dimension of the embedding vector.
-skip_window = 1  # How many words to consider left and right.
+skip_window = args.skip_window # How many words to consider left and right.
 num_skips = 2  # How many times to reuse an input to generate a label.
 
 # We pick a random validation set to sample nearest neighbors. Here we limit the
