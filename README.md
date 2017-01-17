@@ -19,7 +19,7 @@ The [t-distributed Stochastic Neighbor Embedding](https://en.wikipedia.org/wiki/
 This project implements word2vec (Skip-gram model) using Google's TensorFlow library in Python 2.x. 
 Plenty of other libraries are also used: matplotlib, nltk, and sklearn, among others.
 
-Installing TensorFlow locally using the Anaconda, Python 2.7 instructions ([TensorFlow link](https://www.tensorflow.org/get_started/os_setup)).
+Installing TensorFlow locally using the Anaconda, Python 2.7 instructions ([TensorFlow link](https://www.tensorflow.org/get_started/os_setup)) :
 ```
 # Creating the environment through a conda command
 $ conda create -n tensorflow python=2.7
@@ -55,7 +55,7 @@ This project is somewhat limited by the public availability of texts on the Inte
 **All 7 Harry Potter books**
 
 - Data: ~10 MB - A plaintext file of all 7 Harry Potter books. Found with the help of some Google-fu.
-- Comment: word2vec clusters the 4 houses of Hogwarts (Gryffindor, Hufflepuff, Ravenclaw, and Slytherin) together.
+- Comment: word2vec clusters the 4 houses of Hogwarts (Gryffindor, Hufflepuff, Ravenclaw, and Slytherin) together. The visualization is admittedly quite complicated and messy because this was processed by an earlier version of the script.
 
 ![](images/tsne-hp-names-200k-steps-1500-plot-v2-houses-cluster.png)
 
@@ -63,7 +63,7 @@ This project is somewhat limited by the public availability of texts on the Inte
 **The Fellowship of the Ring**
 
 - Data: ~1 MB - A plaintext file of the first book in The Lord of the Rings book series.
-- Comment: word2vec clusters the members of the Fellowship of the Ring: Frodo, Sam, Gandalf, Legolas, Gimli, Aragorn, Boromir, Merry, and Pippin. It's also neat that 'Strider' is quite close to Aragorn. Sauron, Saruman, and Gollum are also relatively distant from the Fellowship.
+- Comment: word2vec clusters the members of the Fellowship of the Ring: Frodo, Sam, Gandalf, Legolas, Gimli, Aragorn, Boromir, Merry, and Pippin. It's also neat that 'Strider' (an alias) is quite close to Aragorn. Sauron, Saruman, and Gollum are also relatively distant from the Fellowship.
 - Command line: `$ python python/word2vec4everything-basic.py --input_data=data/lotr-all.txt  --train_steps=200000 --plot_count=500  --whitelist_labels=Frodo,Sam,Gandalf,Legolas,Gimli,Aragorn,Boromir,Merry,Pippin,Gollum,Sauron,Saruman,Balrog,Galadriel`
 
 ![](images/tsne-lotr1-200k-steps-500-plot-1.png)
@@ -89,7 +89,7 @@ This project is somewhat limited by the public availability of texts on the Inte
 
 **Ender's Game**
 
-- Data: ~500 KB - A plaintext file of Ender's Game
+- Data: ~500 KB - A plaintext file of the novel Ender's Game.
 - Comment: As expected, Ender and his team are clustered together. Locke and Demosthenes maintain some distance. It would be interesting if further training reveals distinct clusters between the Battle School trainees and the school's top military brass.
 - Command line: `$ python python/word2vec4everything-basic.py --input_data=data/enders-game.txt  --train_steps=200000  --plot_count=750 --whitelist_labels=Ender,Valentine,Peter,Colonel,Graff,Mazer,Rackham,Major,Anderson,Bean,Alai,Dink,Petra,Bonzo,Bernard,Stilson`
 
