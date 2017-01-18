@@ -118,6 +118,7 @@ Other resources that explain or extend word2vec:
 - Rong, X. (2014). word2vec parameter learning explained. arXiv preprint arXiv:1411.2738. Retrieved from https://arxiv.org/abs/1411.2738
 - Colyer, A. (April 2016). The amazing power of word vectors. Retrieved from https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/
 - McCormick, C. (April 2016). Word2Vec Tutorial - The Skip-Gram Model. Retrieved from http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/
+- Olah, C. (July 2014). Deep Learning, NLP, and Representations. Retrieved from http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/
 
 Some resources that cover the t-SNE dimensionality reduction technique used for the visualization step:
 
