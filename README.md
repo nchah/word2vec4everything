@@ -9,6 +9,11 @@ Processing some interesting text documents through the word2vec machine learning
 * [Brief Introduction to word2vec](#brief-introduction-to-word2vec)
 * [Dependencies](#dependencies)
 * [Gallery](#gallery)
+    * [Harry Potter](#harry-potter)
+    * [The Fellowship of the Ring](#the-fellowship-of-the-ring)
+    * [The Bible, King James version](#the-bible-king-james-version)
+    * [The Chronicles of Narnia](#the-chronicles-of-narnia)
+    * [Ender's Game](#enders-game)
 * [References](#references)
 
 ## Brief Introduction to word2vec
@@ -59,7 +64,7 @@ $ python python/word2vec4everything-basic.py --input_data=path/to/data
 These are a selection of the most interesting visualizations that have been produced by word2vec4everything. 
 This project is somewhat limited by the public availability of texts on the Internet. :)
 
-**All 7 Harry Potter books**
+### Harry Potter
 
 - Data: ~10 MB - A plaintext file of all 7 Harry Potter books. Found with the help of some Google-fu.
 - Comment: word2vec clusters the 4 houses of Hogwarts (Gryffindor, Hufflepuff, Ravenclaw, and Slytherin) together. The visualization is admittedly quite complicated and messy because this was processed by an earlier version of the script.
@@ -67,7 +72,7 @@ This project is somewhat limited by the public availability of texts on the Inte
 ![](images/tsne-hp-names-200k-steps-1500-plot-v2-houses-cluster.png)
 
 
-**The Fellowship of the Ring**
+### The Fellowship of the Ring
 
 - Data: ~1 MB - A plaintext file of the first book in The Lord of the Rings book series.
 - Comment: word2vec clusters the members of the Fellowship of the Ring: Frodo, Sam, Gandalf, Legolas, Gimli, Aragorn, Boromir, Merry, and Pippin. It's also neat that 'Strider' (an alias) is quite close to Aragorn. Sauron, Saruman, and Gollum are also relatively distant from the Fellowship.
@@ -76,7 +81,7 @@ This project is somewhat limited by the public availability of texts on the Inte
 ![](images/tsne-lotr1-200k-steps-500-plot-1.png)
 
 
-**The Bible, King James version**
+### The Bible, King James version
 
 - Data: ~4.4 MB - A plaintext file of the Bible, King James version.
 - Comment: There seems to be a distinct cluster for the "God" related words and a separate cluster for the prominent people in the source text. Running the script again seems to replicate this interesting finding.
@@ -85,7 +90,7 @@ This project is somewhat limited by the public availability of texts on the Inte
 ![](images/tsne-bible-kjv-200k-steps-750-plot-1.png)
 
 
-**The Chronicles of Narnia**
+### The Chronicles of Narnia
 
 - Data: ~1.7 MB - A plaintext file of all books in the Chronicles of Naria.
 - Comment: Aslan, an important character in the series, seems to be an outlier from the cluster of other main characters. However, replicating this in other iterations doesn't quite support this as strongly.
@@ -94,7 +99,7 @@ This project is somewhat limited by the public availability of texts on the Inte
 ![](images/tsne-narnia-200k-steps-500-plot-1.png)
 
 
-**Ender's Game**
+### Ender's Game
 
 - Data: ~500 KB - A plaintext file of the novel Ender's Game.
 - Comment: As expected, Ender and his team are clustered together. Locke and Demosthenes maintain some distance. It would be interesting if further training reveals distinct clusters between the Battle School trainees and the school's top military brass.
