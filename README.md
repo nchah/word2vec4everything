@@ -4,6 +4,13 @@
 
 Processing some interesting text documents through the word2vec machine learning model and visualizing the resulting vectors to discover the relationships and clusters that come up.
 
+## Table of Contents
+
+* [Brief Introduction to word2vec](#brief-introduction-to-word2vec)
+* [Dependencies](#dependencies)
+* [Gallery](#gallery)
+* [References](#references)
+
 ## Brief Introduction to word2vec
 
 As explained on [Wikipedia](https://en.wikipedia.org/wiki/Word2vec), `word2vec` refers to a number of machine learning models that take a corpus of text and output a vector space of word embeddings.
