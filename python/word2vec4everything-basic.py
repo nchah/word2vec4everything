@@ -53,7 +53,11 @@ parser.add_argument('--plot_count', type=int,
 parser.add_argument('--whitelist_labels', type=str,  # Convert to list downstream 
                     help='A list of labels to include in the visual.')
 parser.add_argument('--skip_window', type=int,
-                    default=1, help='Number of words to consider in the window')
+                    default=1, help='Number of words to consider in the window.')
+parser.add_argument('--batch_size', type=int,
+                    default=128, help='Size of training batches.')
+parser.add_argument('--embedding_size', type=int,
+                    default=128, help='Dimension of embedding vector.')
 # parser.add_argument('--', help='')
 args = parser.parse_args()
 
@@ -73,10 +77,10 @@ punctuation = set(string.punctuation)
 punctuation.remove("'")
 for p in punctuation:
     data = data.replace(p, '')
-    print('replaced: ' + p)
+    print('- replaced: ' + p)
 
 words = tf.compat.as_str(data).split()
-print('Data size:', len(words))
+print('- Data size:', len(words))
 
 
 # Step 2: Build the dictionary and replace rare words with UNK token.
@@ -104,8 +108,8 @@ def build_dataset(words):
 
 data, count, dictionary, reverse_dictionary = build_dataset(words)
 del words  # Hint to reduce memory.
-print('Most common words (+UNK)', count[:5])
-print('Sample data', data[:10], [reverse_dictionary[i] for i in data[:10]])
+print('- Most common words (+UNK):', count[:5])
+print('- Sample data', data[:10], [reverse_dictionary[i] for i in data[:10]])
 
 data_index = 0
 
@@ -143,8 +147,8 @@ for i in range(8):
 
 
 # Step 4: Build and train a skip-gram model.
-batch_size = 128
-embedding_size = 128  # Dimension of the embedding vector.
+batch_size = args.batch_size
+embedding_size = args.embedding_size  # Dimension of the embedding vector.
 skip_window = args.skip_window # How many words to consider left and right.
 num_skips = 2  # How many times to reuse an input to generate a label.
 
@@ -205,7 +209,7 @@ num_steps = args.train_steps
 with tf.Session(graph=graph) as session:
     # We must initialize all variables before we use them.
     init.run()
-    print("Initialized")
+    print("- Initialized.")
 
     average_loss = 0
     for step in xrange(num_steps):
@@ -230,7 +234,7 @@ with tf.Session(graph=graph) as session:
             sim = similarity.eval()
             for i in xrange(valid_size):
                 valid_word = reverse_dictionary[valid_examples[i]]
-                top_k = 8  # number of nearest neighbors
+                top_k = 4  # was 8  - number of nearest neighbors
                 nearest = (-sim[i, :]).argsort()[1:top_k + 1]
                 log_str = "Nearest to %s:" % valid_word
                 for k in xrange(top_k):
@@ -282,7 +286,6 @@ def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
 
 from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
-import nltk
 from nltk import pos_tag
 from adjustText import adjust_text
 import subprocess
