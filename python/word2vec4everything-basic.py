@@ -75,6 +75,7 @@ data = read_data(args.input_data)
 stopwords = nltk.corpus.stopwords.words('english')
 punctuation = set(string.punctuation)
 punctuation.remove("'")
+punctuation.remove(".")
 for p in punctuation:
     data = data.replace(p, '')
     print('- replaced: ' + p)
