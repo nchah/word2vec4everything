@@ -64,6 +64,14 @@ $ python python/word2vec4everything-basic.py --input_data=path/to/data
 These are a selection of the most interesting visualizations that have been produced by word2vec4everything. 
 This project is somewhat limited by the public availability of texts on the Internet. :)
 
+### word2vec Paper
+
+- Data: ~30 KB - A plaintext file of one of the word2vec papers: Mikolov, T., Chen, K., Corrado, G., & Dean, J. (2013). Efficient estimation of word representations in vector space. arXiv preprint arXiv:1301.3781.
+- Comment: This was a bit of a meta experiment. It's nice to see a cluster for some of the neural networks named in the paper (NNLM, RNNLM, RNN) as well as the two different word2vec models (CBOW, Skipgram). This was replicated to some degree in other iterations but may require some other finetuning. 
+- Command line: `$ python python/word2vec4everything-basic.py --input_data=data/word2vec-paper.txt --train_steps=200000 --vocab_size=1000 --plot_count=500`
+
+![](/images/tsne-word2vec-paper-200k-steps-500-plot-1.png)
+
 ### Harry Potter
 
 - Data: ~10 MB - A plaintext file of all 7 Harry Potter books. Found with the help of some Google-fu.
