@@ -9,6 +9,7 @@ Processing some interesting text documents through the word2vec machine learning
 * [Brief Introduction to word2vec](#brief-introduction-to-word2vec)
 * [Dependencies](#dependencies)
 * [Gallery](#gallery)
+    * [word2vec Paper](#word2vec-paper)
     * [Harry Potter](#harry-potter)
     * [The Fellowship of the Ring](#the-fellowship-of-the-ring)
     * [The Bible, King James version](#the-bible-king-james-version)
