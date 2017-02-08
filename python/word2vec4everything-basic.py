@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# word2vec4everything.py 
+# word2vec4everything.py
 # A modified version of the starter code provided in the TensorFlow tutorial.
 #
 # Run: $ python word2vec4everything.py [/path/to/file]
@@ -44,13 +44,13 @@ import string
 # Setting up the program's arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('--input_data', help='Path to the input data file')
-parser.add_argument('--train_steps', type=int, 
+parser.add_argument('--train_steps', type=int,
                     default=20000, help='Number of training steps.')
-parser.add_argument('--vocab_size', type=int, 
+parser.add_argument('--vocab_size', type=int,
                     default=5000, help='Number of words in the dictionary.')
-parser.add_argument('--plot_count', type=int, 
+parser.add_argument('--plot_count', type=int,
                     default=1500, help='Number of points in visualization.')
-parser.add_argument('--whitelist_labels', type=str,  # Convert to list downstream 
+parser.add_argument('--whitelist_labels', type=str,  # Convert to list downstream
                     help='A list of labels to include in the visual.')
 parser.add_argument('--skip_window', type=int,
                     default=1, help='Number of words to consider in the window.')
@@ -260,7 +260,7 @@ def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
         pos = nltk.pos_tag([label])
         # List POS tags with >>> nltk.help.upenn_tagset()
         ignore_tags = ['CC', 'CD', 'DT', 'EX', 'FW', 'IN', 'LS', 'MD', 'PDT', 'PRP', 'PRP$',
-        'RB', 'RBR', 'RBS', 'RP', 'SYM', 'TO', 'UH', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ', 
+        'RB', 'RBR', 'RBS', 'RP', 'SYM', 'TO', 'UH', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ',
         'WDT', 'WP', 'WP$', 'WRB']
         # Logic for selecting the labels to visualize
         if label.lower() not in stopwords \
