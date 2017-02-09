@@ -303,3 +303,4 @@ print(str(labels))
 # print(len(low_dim_embs), len(labels))
 
 plot_with_labels(low_dim_embs, labels)
+
