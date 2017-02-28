@@ -134,12 +134,13 @@ The TensorFlow tutorial:
 
 Other resources that explain or extend word2vec:
 
-- word2vec. Wikipedia article. https://en.wikipedia.org/wiki/Word2vec
-- Levy, O., & Goldberg, Y. (2014). Neural word embedding as implicit matrix factorization. In Advances in neural information processing systems (pp. 2177-2185). Retrieved from http://papers.nips.cc/paper/5477-scalable-non-linear-learning-with-adaptive-polynomial-expansions.pdf
-- Rong, X. (2014). word2vec parameter learning explained. arXiv preprint arXiv:1411.2738. Retrieved from https://arxiv.org/abs/1411.2738
+- Bussieck, J. (February 2017). Demystifying Word2Vec. Retrieved from http://www.deeplearningweekly.com/blog/demystifying-word2vec
 - Colyer, A. (April 2016). The amazing power of word vectors. Retrieved from https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/
+- Levy, O., & Goldberg, Y. (2014). Neural word embedding as implicit matrix factorization. In Advances in neural information processing systems (pp. 2177-2185). Retrieved from http://papers.nips.cc/paper/5477-scalable-non-linear-learning-with-adaptive-polynomial-expansions.pdf
 - McCormick, C. (April 2016). Word2Vec Tutorial - The Skip-Gram Model. Retrieved from http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/
 - Olah, C. (July 2014). Deep Learning, NLP, and Representations. Retrieved from http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/
+- Rong, X. (2014). word2vec parameter learning explained. arXiv preprint arXiv:1411.2738. Retrieved from https://arxiv.org/abs/1411.2738
+- word2vec. Wikipedia article. https://en.wikipedia.org/wiki/Word2vec
 
 Some resources that cover the t-SNE dimensionality reduction technique used for the visualization step:
 
