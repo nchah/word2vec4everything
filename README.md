@@ -120,7 +120,8 @@ This project is somewhat limited by the public availability of texts on the Inte
 
 ## References
 
-More information on word2vec as follows. Some of the papers are referenced according to the APA style.
+More information on word2vec as follows. 
+Some of the papers are referenced according to the APA style.
 
 The original papers by Mikolov et al.: 
 
@@ -147,5 +148,7 @@ Some resources that cover the t-SNE dimensionality reduction technique used for 
 - t-distributed stochastic neighbor embedding. Wikipedia article. https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding
 - Maaten, L. V. D., & Hinton, G. (2008). Visualizing data using t-SNE. Journal of Machine Learning Research, 9(Nov), 2579-2605. Retrieved from http://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf
 - An illustrated introduction to the t-SNE algorithm. O'Reilly Media. https://www.oreilly.com/learning/an-illustrated-introduction-to-the-t-sne-algorithm
+- How to Use t-SNE Effectively. Distill. http://distill.pub/2016/misread-tsne/
+
 
 
