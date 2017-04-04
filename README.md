@@ -146,9 +146,9 @@ Other resources that explain or extend word2vec:
 Some resources that cover the t-SNE dimensionality reduction technique used for the visualization step:
 
 - t-distributed stochastic neighbor embedding. Wikipedia article. https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding
-- Maaten, L. V. D., & Hinton, G. (2008). Visualizing data using t-SNE. Journal of Machine Learning Research, 9(Nov), 2579-2605. Retrieved from http://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf
+- van der Maaten, L., & Hinton, G. (2008). Visualizing data using t-SNE. Journal of Machine Learning Research, 9(Nov), 2579-2605. Retrieved from http://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf
 - An illustrated introduction to the t-SNE algorithm. O'Reilly Media. https://www.oreilly.com/learning/an-illustrated-introduction-to-the-t-sne-algorithm
-- How to Use t-SNE Effectively. Distill. http://distill.pub/2016/misread-tsne/
+- Wattenberg, M., Viegas, F., & Johnson I. (2016, Oct. 16). How to Use t-SNE Effectively. Distill Research Journal. http://distill.pub/2016/misread-tsne/
 
 
 
